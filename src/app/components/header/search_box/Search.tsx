@@ -11,7 +11,7 @@ export default function Search() {
   return (
     <div className="relative w-full max-w-md">
       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <SearchIcon className="w-5 h-5 " color="black"/>
+        <SearchIcon className="w-5 h-5 " color="black" onClick={handleClear}/>
       </div>
       <input
         type="search"
