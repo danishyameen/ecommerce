@@ -185,28 +185,3 @@ export default function GearProducts() {
 
 
 
-// <CarouselItem className="basis-1/4">
-//                                     <Image src={gearWomenProducts1} alt="gearWomenProducts1" />
-//                                     <div className="w-auto flex justify-between mt-5">
-//                                         <div className="w-[130px] ">
-//                                             <h3 className=" font-medium text-[15px] ">Nike Air Max Pulse</h3>
-//                                             <p className="text-[#757575] font-normal text-[15px]">Men's Shoes</p>
-//                                         </div>
-//                                         <div className="price">
-//                                             <p className="text-[15px] font-medium">₹ 13 995</p>
-//                                         </div>
-//                                     </div>
-//                                 </CarouselItem>
-
-//                                 <CarouselItem className="basis-1/4">
-//                                     <Image src={gearWomenProducts2} alt="gearWomenProducts2" />
-//                                     <div className="w-auto flex justify-between mt-5">
-//                                         <div className="w-[130px] ">
-//                                             <h3 className=" font-medium text-[15px] ">Nike Air Max Pulse</h3>
-//                                             <p className="text-[#757575] font-normal text-[15px]">Men's Shoes</p>
-//                                         </div>
-//                                         <div className="price">
-//                                             <p className="text-[15px] font-medium">₹ 13 995</p>
-//                                         </div>
-//                                     </div>
-//                                 </CarouselItem>
