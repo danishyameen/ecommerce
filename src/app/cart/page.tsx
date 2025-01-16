@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import heart from "@/app/images/heart.png";
 import cartProductPic1 from "@/app/images/gearMenProducts1.png"
 import menShoesProductPic1 from "@/app/images/product1.png"
 
-import { FiShoppingCart } from "react-icons/fi";
+
 import { Heart, Trash2 } from "lucide-react";
 
 
