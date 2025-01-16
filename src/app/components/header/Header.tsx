@@ -37,7 +37,7 @@ export default function Header() {
                         <div className="navbar">
                             <nav className=" flex justify-between ">
                                 <ul className="h-[60px] mr-[80px] font-medium">
-                                    <li className="mr-5"><Link href="/">New & Featured</Link></li>
+                                    <li className="mr-5"><Link href="/products">New & Featured</Link></li>
                                     <li className="mr-5"><Link href="/">Men</Link></li>
                                     <li className="mr-5"><Link href="/">Women</Link></li>
                                     <li className="mr-5"><Link href="/">Kids</Link></li>
