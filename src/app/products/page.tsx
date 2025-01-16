@@ -19,6 +19,25 @@ export default function productsPage() {
                     </div>
                 </div>
             </div>
+
+            <div className="grid grid-cols-12">
+                <div className="catagories  overflow-y-scroll col-span-3">
+                    <ul className="text-[16px] font-Helvetica font-medium ">
+                        <li>Shoes</li>
+                        <li>Sports Bras</li>
+                        <li>Tops & T-Shirts</li>
+                        <li>Hoodies & Sweatshirts</li>
+                        <li>Jackets</li>
+                        <li>Trousers & Tights</li>
+                        <li>Shorts</li>
+                        <li>Tracksuits</li>
+                        <li>Jumpsuits & Rompers</li>
+                        <li>Skirts & Dresses</li>
+                        <li>Socks</li>
+                        <li>Accessories & Equipment</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     )
 }
