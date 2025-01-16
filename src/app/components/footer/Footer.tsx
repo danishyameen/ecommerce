@@ -6,7 +6,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#111111] w-[100%] h-auto">
+        <footer className="bg-[#111111] pb-[20px] w-[100%] h-auto">
             <div className="py-[40px] header_container">
                 <div className="mainFooter flex">
                     <div className="w-[80%] h-auto flex gap-5 mx-auto">
@@ -50,7 +50,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="subFooter header_container flex justify-between">
+            <div className="subFooter header_container flex justify-between mb-5">
                 <div className="locationText flex gap-5 w-[350px]">
                     <div className="flex gap-2 w-[60px]">
                         <FaLocationDot className="text-[#ffffff] w-[18px] h-[18px]" />
@@ -58,7 +58,7 @@ export default function Footer() {
                     </div>
                     <p className="font-normal text-[15px] w-[250px] text-[#7E7E7E]">© 2023 Nike, Inc. All Rights Reserved</p>
                 </div>
-                <div className="footerText flex gap-5 w-auto">
+                <div className="footerText flex gap-5 w-auto ">
                     <p className="text-[#7E7E7E] text-[15px] font-normal">Guides</p>
                     <p className="text-[#7E7E7E] text-[15px] font-normal">Terms of Sale</p>
                     <p className="text-[#7E7E7E] text-[15px] font-normal">Terms of Use</p>
