@@ -55,12 +55,12 @@ export default function GearProducts() {
                                     </div>
                                 </CarouselItem>
 
-                                <CarouselItem className="basis-1/2 w-[100%]">
-                                    <Image src={gearMenProducts1} alt="gearMenProducts1" />
+                                <CarouselItem className="basis-1/2">
+                                    <Image src={gearMenProducts2} alt="gearMenProducts2" />
                                     <div className="w-auto flex justify-between mt-5">
-                                        <div className="w-[180px] ">
-                                            <h3 className=" font-medium text-[15px] ">Nike Dri-FIT Challenger</h3>
-                                            <p className="text-[#757575] font-normal text-[15px]">Men's 18cm (approx.) 2-in-1 Versatile Shorts</p>
+                                        <div className="w-[130px] ">
+                                            <h3 className=" font-medium text-[15px] ">Nike Air Max Pulse</h3>
+                                            <p className="text-[#757575] font-normal text-[15px]">Men's Shoes</p>
                                         </div>
                                         <div className="price">
                                             <p className="text-[15px] font-medium">₹ 13 995</p>
@@ -71,9 +71,9 @@ export default function GearProducts() {
                                 <CarouselItem className="basis-1/2 w-[100%]">
                                     <Image src={gearMenProducts1} alt="gearMenProducts1" />
                                     <div className="w-auto flex justify-between mt-5">
-                                        <div className="w-[130px] ">
-                                            <h3 className=" font-medium text-[15px] ">Nike Air Max Pulse</h3>
-                                            <p className="text-[#757575] font-normal text-[15px]">Women's Shoes</p>
+                                        <div className="w-[180px] ">
+                                            <h3 className=" font-medium text-[15px] ">Nike Dri-FIT Challenger</h3>
+                                            <p className="text-[#757575] font-normal text-[15px]">Men's 18cm (approx.) 2-in-1 Versatile Shorts</p>
                                         </div>
                                         <div className="price">
                                             <p className="text-[15px] font-medium">₹ 13 995</p>
@@ -118,27 +118,27 @@ export default function GearProducts() {
                         <Carousel className="w-[100%] mx-auto" opts={{ align: "start" }}>
                             <CarouselContent>
                                 <CarouselItem className="basis-1/2 w-[100%]">
-                                    <Image src={gearMenProducts1} alt="gearMenProducts1" />
+                                    <Image src={gearWomenProducts1} alt="gearWomenProducts1" />
                                     <div className="w-auto flex justify-between mt-5">
-                                        <div className="w-[231.50px] ">
-                                            <h3 className=" font-medium text-[15px] ">Nike Dri-FIT ADV Run Division</h3>
-                                            <p className="text-[#757575] w-[150px] font-normal text-[15px]">Women's Long-Sleeve Running Top</p>
+                                        <div className="w-[130px] ">
+                                            <h3 className=" font-medium text-[15px] ">Nike Air Max Pulse</h3>
+                                            <p className="text-[#757575] font-normal text-[15px]">Women's Shoes</p>
                                         </div>
                                         <div className="price">
-                                            <p className="text-[15px] font-medium">₹ 5 295</p>
+                                            <p className="text-[15px] font-medium">₹ 13 995</p>
                                         </div>
                                     </div>
                                 </CarouselItem>
 
-                                <CarouselItem className="basis-1/2 w-[100%]">
-                                    <Image src={gearMenProducts1} alt="gearMenProducts1" />
+                                <CarouselItem className="basis-1/2">
+                                    <Image src={gearWomenProducts2} alt="gearWomenProducts2" />
                                     <div className="w-auto flex justify-between mt-5">
                                         <div className="w-[130px] ">
-                                            <h3 className=" font-medium text-[15px] ">Nike Fast</h3>
-                                            <p className="text-[#757575] font-normal w-[224.39px] text-[15px]">Women's Mid-Rise 7/8 Running Leggings with Pockets</p>
+                                            <h3 className=" font-medium text-[15px] ">Nike Air Max Pulse</h3>
+                                            <p className="text-[#757575] font-normal text-[15px]">Men's Shoes</p>
                                         </div>
                                         <div className="price">
-                                            <p className="text-[15px] font-medium">₹ 3 795</p>
+                                            <p className="text-[15px] font-medium">₹ 13 995</p>
                                         </div>
                                     </div>
                                 </CarouselItem>

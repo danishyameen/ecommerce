@@ -9,16 +9,16 @@ export default function Search() {
     setSearchText("")
   }
   return (
-    <div className="relative w-full max-w-md">
-      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <SearchIcon className="w-5 h-5 " color="black" onClick={handleClear}/>
+    <div className="relative w-full max-w-md mx-auto ">
+      <div className="absolute inset-y-0  right-0 flex items-center pr-3 pointer-events-none">
+        <SearchIcon className="w-5 h-5 " color="#757575" onClick={handleClear}/>
       </div>
       <input
         type="search"
-        placeholder="Search"
+        placeholder="What can we help you with?"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
-        className="block w-[180px] h-[40px] pl-10 pr-10 rounded-full bg-[#F5F5F5] outline-none"
+        className="block w-[457.33px] mx-auto h-[56px]  pl-10 pr-10 rounded-[8px] border-2 border-[#757575] outline-none"
       />
       {searchText && (
         <div className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">

@@ -12,8 +12,9 @@ export default function ContactPage() {
     return (
         <div className="contactPage header_container">
             <div className="w-auto h-auto">
-                <h1 className=" font-Helvetica text-center font-normal text-[32px] mt-10">GET HELP</h1>
-                <div>
+                <h1 className=" font-Helvetica text-center font-normal text-[32px] mt-10 mb-5">GET HELP</h1>
+                <div className="w-[100%] mx-auto text-center  mb-10">
+                    {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem vitae similique aspernatur ullam, maiores magnam suscipit ipsum quae officiis minus amet obcaecati distinctio id eos assumenda doloremque quos fugiat aliquid.</p> */}
                     <SearchInput/>
                 </div>
             </div>
