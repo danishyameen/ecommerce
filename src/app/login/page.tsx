@@ -38,7 +38,7 @@ export default function LoginPage() {
                             <button className="bg-[#111111] text-white font-normal text-[13px] font-[Helvetica] w-full p-2">SIGN IN</button>
                         </div>
                         <div className="joinUs">
-                            <p className="text-[#8D8D8D] text-[13px]">Not a Member? <span className="text-[#111111] underline"> <Link href="/join" > Join Us. </Link></span></p>
+                            <p className="text-[#8D8D8D] text-[13px]">Not a Member? <span className="text-[#111111] underline"> <Link href="/join-us" > Join Us. </Link></span></p>
                         </div>
                     </form>
                 </div>
