@@ -9,7 +9,7 @@ import { Heart, Trash2 } from "lucide-react";
 
 export default function cartPage() {
     return (
-        <div className="cartPage header_container ">
+        <div className="cartPage header_container">
             <div className="cartPageSection grid grid-cols-12 gap-8 mt-10 mb-[200px] w-[1100px] mx-auto">
                 <div className="col-span-7">
                     <div className="w-auto h-auto bg-[#F7F7F7] p-5 mb-3">
@@ -88,7 +88,7 @@ export default function cartPage() {
                         </div>
 
                         <div className="w-auto h-auto mx-auto text-center mt-[50px]">
-                            <button className="w-[300px] h-[50px] rounded-full text-[15px] text-[#ffffff] bg-[#111111] font-medium font-Inter">Member Checkout</button>
+                        <Link href="/checkout"><button className="w-[300px] h-[50px] rounded-full text-[15px] text-[#ffffff] bg-[#111111] font-medium font-Inter">Member Checkout</button></Link>
                         </div>
                     </div>
                 </div>
