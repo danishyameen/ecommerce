@@ -3,6 +3,19 @@ import { FaFacebookF } from "react-icons/fa";
 import { TiSocialInstagram } from "react-icons/ti";
 import { TfiYoutube } from "react-icons/tfi";
 import { FaLocationDot } from "react-icons/fa6";
+import Image from "next/image"
+import payImg1 from "@/app/images/payImg1.png"
+import payImg2 from "@/app/images/payImg2.png"
+import payImg3 from "@/app/images/Image (4).png"
+import payImg4 from "@/app/images/Image-1.png"
+import payImg5 from "@/app/images/Image-2.png"
+import payImg6 from "@/app/images/Image-3.png"
+import payImg7 from "@/app/images/Image-4.png"
+import payImg8 from "@/app/images/Image-5.png"
+import payImg9 from "@/app/images/Image-6.png"
+import payImg10 from "@/app/images/Image-7.png"
+import payImg11 from "@/app/images/Image-8.png"
+
 
 export default function Footer() {
     return (
@@ -50,7 +63,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="subFooter header_container flex justify-between mb-5">
+            <div className="subFooter header_container border-t-2 border-solid pt-3 border-[#757575] flex justify-between pb-[20px]">
                 <div className="locationText flex gap-5 w-[350px]">
                     <div className="flex gap-2 w-[60px]">
                         <FaLocationDot className="text-[#ffffff] w-[18px] h-[18px]" />
@@ -63,8 +76,21 @@ export default function Footer() {
                     <p className="text-[#7E7E7E] text-[15px] font-normal">Terms of Sale</p>
                     <p className="text-[#7E7E7E] text-[15px] font-normal">Terms of Use</p>
                     <p className="text-[#7E7E7E] text-[15px] font-normal">Nike Privacy Policy</p>
-                </div>
+                </div>    
             </div>
+            <div className="subFooter header_container flex justify-evenly mb-5">
+                    <Image src={payImg1} alt="payImg1" />
+                    <Image src={payImg2} alt="payImg2" />
+                    <Image src={payImg3} alt="payImg3" />
+                    <Image src={payImg4} alt="payImg4" />
+                    <Image src={payImg5} alt="payImg5" />
+                    <Image src={payImg6} alt="payImg6" />
+                    <Image src={payImg7} alt="payImg7" />
+                    <Image src={payImg8} alt="payImg8" />
+                    <Image src={payImg9} alt="payImg9" />
+                    <Image src={payImg10} alt="payImg10" />
+                    <Image src={payImg11} alt="payImg11" />
+                </div>
         </footer>
     )
 }
