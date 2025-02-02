@@ -1,187 +1,275 @@
+
+"use client"
+
+"use client"
+
+import { motion } from "framer-motion";
 import {
     Carousel,
     CarouselContent,
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
-} from "@/components/ui/carousel"
-
+} from "@/components/ui/carousel";
 import Image from "next/image";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 
-import { FaAngleRight } from "react-icons/fa6";
-import { FaAngleLeft } from "react-icons/fa6";
+import gearMenProducts1 from "@/app/images/gearMenProducts1.png";
+import gearMenProducts2 from "@/app/images/gearMenProducts2.png";
+import gearWomenProducts1 from "@/app/images/gearWomenProducts1.png";
+import gearWomenProducts2 from "@/app/images/gearWomenProducts2.png";
 
-import gearMenProducts1 from "@/app/images/gearMenProducts1.png"
-import gearMenProducts2 from "@/app/images/gearMenProducts2.png"
-import gearWomenProducts1 from "@/app/images/gearWomenProducts1.png"
-import gearWomenProducts2 from "@/app/images/gearWomenProducts2.png"
+const products = {
+    men: [
+        {
+            image: gearMenProducts1,
+            title: "Nike Dri-FIT ADV TechKnit Ultra",
+            description: "Men's Short-Sleeve Running Top",
+            price: "3 895",
+        },
+        {
+            image: gearMenProducts2,
+            title: "Nike Air Max Pulse",
+            description: "Men's Shoes",
+            price: "13 995",
+        },
+        {
+          image: gearMenProducts1,
+          title: "Nike Dri-FIT ADV TechKnit Ultra",
+          description: "Men's Short-Sleeve Running Top",
+          price: "3 895",
+      },
+    ],
+    women: [
+        {
+            image: gearWomenProducts1,
+            title: "Nike Air Max Pulse",
+            description: "Women's Shoes",
+            price: "13 995",
+        },
+        {
+            image: gearWomenProducts2,
+            title: "Nike Air Max Pulse",
+            description: "Women's Shoes",
+            price: "13 995",
+        },
+        {
+          image: gearWomenProducts1,
+          title: "Nike Air Max Pulse",
+          description: "Women's Shoes",
+          price: "13 995",
+      },
+    ],
+};
 
-
-export default function GearProducts() {
+export default function ProductCarousel() {
     return (
-        <section>
-            <div className="gearProducts header_container">
-                <div className="gearProducts_content w-auto h-auto">
-                    <h2 className="font-medium text-[25px] mb-5">Gear Up</h2>
-                </div>
-
-                <div className="products_slider h-auto flex gap-4  header_container">
-                    <div className="mens_slider w-[600px]  px-1 h-[509px]">
-                        <div className="w-[600px] h-[48px] flex text-right  justify-end">
-                            <div className="slide_option w-auto h-[48px] flex items-center">
-                                <p className=" font-medium text[18px] mr-[80px]">Shop Men's</p>
-
-                                <div className="mt-[0px] w-[28px] hidden h-[28px] p-[4px] bg-[#E3E3E5] rounded-full">
-                                    <FaAngleLeft size="18px" color="black" />
+        <motion.section
+            className="px-4 sm:px-6 lg:px-8 py-12"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+            <div className="max-w-6xl mx-auto">
+                <motion.h2
+                    className="text-2xl md:text-3xl font-medium mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                    Gear Up
+                </motion.h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                    {Object.entries(products).map(([gender, items]) => (
+                        <div key={gender} className="product-carousel-section">
+                            <Carousel opts={{ align: "start" }}>
+                                <div className="flex justify-between items-center mb-4">
+                                    <h3 className="text-lg md:text-xl font-medium">
+                                        Shop {gender.charAt(0).toUpperCase() + gender.slice(1)}'s
+                                    </h3>
+                                    <div className="flex gap-2">
+                                        <CarouselPrevious className="transition-transform hover:scale-110 bg-gray-200 hover:bg-gray-300 text-black rounded-full p-2">
+                                            <FaAngleLeft className="w-4 h-4 md:w-5 md:h-5" />
+                                        </CarouselPrevious>
+                                        <CarouselNext className="transition-transform hover:scale-110 bg-gray-200 hover:bg-gray-300 text-black rounded-full p-2">
+                                            <FaAngleRight className="w-4 h-4 md:w-5 md:h-5" />
+                                        </CarouselNext>
+                                    </div>
                                 </div>
-                                <div className="mt-[1px]  w-[28px] hidden  h-[28px] p-[4px]  bg-[#E5E5E5] rounded-full">
-                                    <FaAngleRight size="18px" color="black" />
-                                </div>
-                            </div>
+                                <CarouselContent>
+                                    {items.map((product, index) => (
+                                        <CarouselItem key={index} className="basis-full sm:basis-1/2 lg:basis-1/2">
+                                            <motion.div
+                                                className="product-card p-2"
+                                                whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.15)" }}
+                                                transition={{ duration: 0.3 }}
+                                            >
+                                                <div className="relative aspect-square bg-gray-100 rounded-xl overflow-hidden">
+                                                    <Image
+                                                        src={product.image}
+                                                        alt={product.title}
+                                                        fill
+                                                        className="object-cover"
+                                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                                    />
+                                                </div>
+                                                <div className="product-info mt-4 flex justify-between gap-2">
+                                                    <div className="flex-1">
+                                                        <h3 className="text-sm md:text-base font-medium">
+                                                            {product.title}
+                                                        </h3>
+                                                        <p className="text-xs md:text-sm text-gray-500 mt-1">
+                                                            {product.description}
+                                                        </p>
+                                                    </div>
+                                                    <p className="text-sm md:text-base font-medium">₹ {product.price}</p>
+                                                </div>
+                                            </motion.div>
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                            </Carousel>
                         </div>
-
-                        <Carousel className="w-[100%] mx-auto" opts={{ align: "start" }}>
-                            <CarouselContent>
-                                <CarouselItem className="basis-1/2 w-[100%]">
-                                    <Image src={gearMenProducts1} alt="gearMenProducts1" />
-                                    <div className="w-auto flex justify-between mt-5">
-                                        <div className="w-[231.50px] ">
-                                            <h3 className=" font-medium text-[15px] ">Nike Dri-FIT ADV TechKnit Ultra</h3>
-                                            <p className="text-[#757575] w-[150px] font-normal text-[15px]">Men's Short-Sleeve Running Top</p>
-                                        </div>
-                                        <div className="price">
-                                            <p className="text-[15px] font-medium">₹ 3 895</p>
-                                        </div>
-                                    </div>
-                                </CarouselItem>
-
-                                <CarouselItem className="basis-1/2">
-                                    <Image src={gearMenProducts2} alt="gearMenProducts2" />
-                                    <div className="w-auto flex justify-between mt-5">
-                                        <div className="w-[130px] ">
-                                            <h3 className=" font-medium text-[15px] ">Nike Air Max Pulse</h3>
-                                            <p className="text-[#757575] font-normal text-[15px]">Men's Shoes</p>
-                                        </div>
-                                        <div className="price">
-                                            <p className="text-[15px] font-medium">₹ 13 995</p>
-                                        </div>
-                                    </div>
-                                </CarouselItem>
-
-                                <CarouselItem className="basis-1/2 w-[100%]">
-                                    <Image src={gearMenProducts1} alt="gearMenProducts1" />
-                                    <div className="w-auto flex justify-between mt-5">
-                                        <div className="w-[180px] ">
-                                            <h3 className=" font-medium text-[15px] ">Nike Dri-FIT Challenger</h3>
-                                            <p className="text-[#757575] font-normal text-[15px]">Men's 18cm (approx.) 2-in-1 Versatile Shorts</p>
-                                        </div>
-                                        <div className="price">
-                                            <p className="text-[15px] font-medium">₹ 13 995</p>
-                                        </div>
-                                    </div>
-                                </CarouselItem>
-
-                                <CarouselItem className="basis-1/2">
-                                    <Image src={gearMenProducts2} alt="gearMenProducts2" />
-                                    <div className="w-auto flex justify-between mt-5">
-                                        <div className="w-[130px] ">
-                                            <h3 className=" font-medium text-[15px] ">Nike Air Max Pulse</h3>
-                                            <p className="text-[#757575] font-normal text-[15px]">Men's Shoes</p>
-                                        </div>
-                                        <div className="price">
-                                            <p className="text-[15px] font-medium">₹ 13 995</p>
-                                        </div>
-                                    </div>
-                                </CarouselItem>
-
-
-                            </CarouselContent>
-                            <CarouselPrevious />
-                            <CarouselNext />
-                        </Carousel>
-                    </div>
-
-                    <div className="mens_slider w-[600px]  px-1 h-[509px]">
-                        <div className="w-[600px] h-[48px] flex text-right  justify-end">
-                            <div className="slide_option w-auto h-[48px] flex items-center">
-                                <p className=" font-medium text[18px] mr-[80px]">Shop Women's</p>
-
-                                <div className="mt-[0px] hidden w-[28px] h-[28px] p-[4px]  bg-[#E5E5E5] rounded-full">
-                                    <FaAngleLeft size="20px" color="black" />
-                                </div>
-                                <div className="mt-[-3px] hidden w-[30px] h-[30px] p-[5px]  bg-[#E5E5E5] rounded-full">
-                                    <FaAngleRight size="20px" color="black" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <Carousel className="w-[100%] mx-auto" opts={{ align: "start" }}>
-                            <CarouselContent>
-                                <CarouselItem className="basis-1/2 w-[100%]">
-                                    <Image src={gearWomenProducts1} alt="gearWomenProducts1" />
-                                    <div className="w-auto flex justify-between mt-5">
-                                        <div className="w-[130px] ">
-                                            <h3 className=" font-medium text-[15px] ">Nike Air Max Pulse</h3>
-                                            <p className="text-[#757575] font-normal text-[15px]">Women's Shoes</p>
-                                        </div>
-                                        <div className="price">
-                                            <p className="text-[15px] font-medium">₹ 13 995</p>
-                                        </div>
-                                    </div>
-                                </CarouselItem>
-
-                                <CarouselItem className="basis-1/2">
-                                    <Image src={gearWomenProducts2} alt="gearWomenProducts2" />
-                                    <div className="w-auto flex justify-between mt-5">
-                                        <div className="w-[130px] ">
-                                            <h3 className=" font-medium text-[15px] ">Nike Air Max Pulse</h3>
-                                            <p className="text-[#757575] font-normal text-[15px]">Men's Shoes</p>
-                                        </div>
-                                        <div className="price">
-                                            <p className="text-[15px] font-medium">₹ 13 995</p>
-                                        </div>
-                                    </div>
-                                </CarouselItem>
-
-                                <CarouselItem className="basis-1/2 w-[100%]">
-                                    <Image src={gearWomenProducts1} alt="gearWomenProducts1" />
-                                    <div className="w-auto flex justify-between mt-5">
-                                        <div className="w-[130px] ">
-                                            <h3 className=" font-medium text-[15px] ">Nike Air Max Pulse</h3>
-                                            <p className="text-[#757575] font-normal text-[15px]">Women's Shoes</p>
-                                        </div>
-                                        <div className="price">
-                                            <p className="text-[15px] font-medium">₹ 13 995</p>
-                                        </div>
-                                    </div>
-                                </CarouselItem>
-
-                                <CarouselItem className="basis-1/2">
-                                    <Image src={gearWomenProducts2} alt="gearWomenProducts2" />
-                                    <div className="w-auto flex justify-between mt-5">
-                                        <div className="w-[130px] ">
-                                            <h3 className=" font-medium text-[15px] ">Nike Air Max Pulse</h3>
-                                            <p className="text-[#757575] font-normal text-[15px]">Men's Shoes</p>
-                                        </div>
-                                        <div className="price">
-                                            <p className="text-[15px] font-medium">₹ 13 995</p>
-                                        </div>
-                                    </div>
-                                </CarouselItem>
-
-
-                            </CarouselContent>
-                            <CarouselPrevious />
-                            <CarouselNext />
-                        </Carousel>
-                    </div>
-
-
+                    ))}
                 </div>
             </div>
-        </section>
-    )
+        </motion.section>
+    );
 }
+
+
+
+// import {
+//     Carousel,
+//     CarouselContent,
+//     CarouselItem,
+//     CarouselNext,
+//     CarouselPrevious,
+//   } from "@/components/ui/carousel"
+//   import Image from "next/image"
+//   import { FaAngleRight, FaAngleLeft } from "react-icons/fa6"
+  
+//   import gearMenProducts1 from "@/app/images/gearMenProducts1.png"
+//   import gearMenProducts2 from "@/app/images/gearMenProducts2.png"
+//   import gearWomenProducts1 from "@/app/images/gearWomenProducts1.png"
+//   import gearWomenProducts2 from "@/app/images/gearWomenProducts2.png"
+    
+//     const products = {
+//     men: [
+//       {
+//         image: gearMenProducts1,
+//         title: "Nike Dri-FIT ADV TechKnit Ultra",
+//         description: "Men's Short-Sleeve Running Top",
+//         price: "3 895"
+//       },
+//       {
+//         image: gearMenProducts2,
+//         title: "Nike Air Max Pulse",
+//         description: "Men's Shoes",
+//         price: "13 995"
+//       },
+//       {
+//         image: gearMenProducts1,
+//         title: "Nike Dri-FIT ADV TechKnit Ultra",
+//         description: "Men's Short-Sleeve Running Top",
+//         price: "3 895"
+//       },
+//       // Add more products
+//     ],
+//     women: [
+//       {
+//         image: gearWomenProducts1,
+//         title: "Nike Air Max Pulse",
+//         description: "Women's Shoes",
+//         price: "13 995"
+//       },
+//       {
+//         image: gearWomenProducts2,
+//         title: "Nike Air Max Pulse",
+//         description: "Women's Shoes",
+//         price: "13 995"
+//       },
+//       {
+//         image: gearWomenProducts1,
+//         title: "Nike Air Max Pulse",
+//         description: "Women's Shoes",
+//         price: "13 995"
+//       },
+//       // Add more products
+//     ]
+//   }
+   
+//   export default function ProductCarousel() {
+//     return (
+//       <section className="px-4 sm:px-6 lg:px-8 py-12">
+//         <div className="max-w-6xl mx-auto">
+//           <h2 className="text-2xl md:text-3xl font-medium mb-8">Gear Up</h2>
+          
+//           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+//             {Object.entries(products).map(([gender, items]) => (
+//               <div key={gender} className="product-carousel-section">
+//                 <Carousel opts={{ align: "start" }}>
+//                   <div className="flex justify-between items-center mb-4">
+//                     <h3 className="text-lg md:text-xl font-medium">
+//                       Shop {gender.charAt(0).toUpperCase() + gender.slice(1)}'s
+//                     </h3>
+//                     <div className="flex gap-2">
+//                       <CarouselPrevious 
+//                         className="static translate-y-0 bg-gray-200 hover:bg-gray-300 text-black rounded-full p-2"
+//                       >
+//                         <FaAngleLeft className="w-4 h-4 md:w-5 md:h-5" />
+//                       </CarouselPrevious>
+//                       <CarouselNext 
+//                         className="static translate-y-0 bg-gray-200 hover:bg-gray-300 text-black rounded-full p-2"
+//                       >
+//                         <FaAngleRight className="w-4 h-4 md:w-5 md:h-5" />
+//                       </CarouselNext>
+//                     </div>
+//                   </div>
+  
+//                   <CarouselContent>
+//                     {items.map((product, index) => (
+//                       <CarouselItem 
+//                         key={index}
+//                         className="basis-full sm:basis-1/2 lg:basis-1/2"
+//                       >
+//                         <div className="product-card p-2">
+//                           <div className="relative aspect-square bg-gray-100 rounded-xl overflow-hidden">
+//                             <Image
+//                               src={product.image}
+//                               alt={product.title}
+//                               fill
+//                               className="object-cover"
+//                               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+//                             />
+//                           </div>
+//                           <div className="product-info mt-4 flex justify-between gap-2">
+//                             <div className="flex-1">
+//                               <h3 className="text-sm md:text-base font-medium">
+//                                 {product.title}
+//                               </h3>
+//                               <p className="text-xs md:text-sm text-gray-500 mt-1">
+//                                 {product.description}
+//                               </p>
+//                             </div>
+//                             <p className="text-sm md:text-base font-medium">
+//                               ₹ {product.price}
+//                             </p>
+//                           </div>
+//                         </div>
+//                       </CarouselItem>
+//                     ))}
+//                   </CarouselContent>
+//                 </Carousel>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+//     )
+//   }
+
+
 
 
 

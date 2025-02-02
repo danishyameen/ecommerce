@@ -15,27 +15,27 @@ export default function Home() {
         <HeroSection />
       </div>
 
-      <div className="mt-10">
+      <div className="mt-5">
         <ShowCaseProducts />
       </div>
 
-      <div className="mt-10">
+      <div className="mt-5">
         <Featured/>        
       </div>
 
-      <div className="mt-10">
+      <div className="mt-5">
         <GearProducts/>        
       </div>
 
-      <div className="mt-10">
+      <div className="mt-5">
         <JordanBrand/>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-5">
         <EssentialsSection/>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-5">
         <Catagories />
       </div>
 

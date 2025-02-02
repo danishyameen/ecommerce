@@ -18,7 +18,7 @@ export default function Search() {
         placeholder="Search"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
-        className="block w-[180px] h-[40px] pl-10 pr-10 rounded-full bg-[#F5F5F5] outline-none"
+        className="block w-auto md:w-[180px] h-[40px] pl-10 pr-10 rounded-full bg-[#F5F5F5] outline-none"
       />
       {searchText && (
         <div className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">

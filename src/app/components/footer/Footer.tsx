@@ -1,96 +1,202 @@
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
+"use client"
+
+"use client";
+
+import { motion } from "framer-motion";
+import { FaTwitter, FaFacebookF } from "react-icons/fa";
 import { TiSocialInstagram } from "react-icons/ti";
 import { TfiYoutube } from "react-icons/tfi";
 import { FaLocationDot } from "react-icons/fa6";
-import Image from "next/image"
-import payImg1 from "@/app/images/payImg1.png"
-import payImg2 from "@/app/images/payImg2.png"
-import payImg3 from "@/app/images/Image (4).png"
-import payImg4 from "@/app/images/Image-1.png"
-import payImg5 from "@/app/images/Image-2.png"
-import payImg6 from "@/app/images/Image-3.png"
-import payImg7 from "@/app/images/Image-4.png"
-import payImg8 from "@/app/images/Image-5.png"
-import payImg9 from "@/app/images/Image-6.png"
-import payImg10 from "@/app/images/Image-7.png"
-import payImg11 from "@/app/images/Image-8.png"
-
 
 export default function Footer() {
     return (
-        <footer className="bg-[#111111] pb-[20px] w-[100%] h-auto">
-            <div className="py-[40px] header_container">
-                <div className="mainFooter flex">
-                    <div className="w-[80%] h-auto flex gap-5 mx-auto">
-                        <div className="w-[240px] text-[#ffffff] font-normal mt-[-5px] text-[14px] leading-[40px]">
-                            <h3>Find A Store</h3>
-                            <h3>Become A Member</h3>
-                            <h3>Sign Up for Email</h3>
-                            <h3>Send Us Feedback</h3>
-                            <h3>Student Discounts</h3>
+        <motion.footer
+            className="bg-[#111111] w-full pb-5"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+            {/* Main Footer Section */}
+            <div className="py-10">
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {[
+                            { title: "Quick Links", links: ["Find A Store", "Become A Member", "Sign Up for Email", "Send Us Feedback", "Student Discounts"] },
+                            { title: "Get Help", links: ["Order Status", "Delivery", "Returns", "Payment Options", "Nike.com Inquiries", "Other Inquiries"] },
+                            { title: "About Nike", links: ["News", "Careers", "Investors", "Sustainability"] }
+                        ].map((category, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                            >
+                                <h3 className="text-white text-base font-semibold mb-4">{category.title}</h3>
+                                <ul className="text-[#7E7E7E] text-sm space-y-2">
+                                    {category.links.map((link, i) => (
+                                        <li
+                                            key={i}
+                                            className="hover:text-white transition-colors duration-300 cursor-pointer"
+                                        >
+                                            {link}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        ))}
 
-                        </div>
-
-                        <div className="w-[240px]">
-                            <h3 className="text-[#ffffff] font-normal text-[14px] mb-3">Get Help</h3>
-                            <ul className="text-[#7E7E7E] text-[14px] leading-[40px]">
-                                <li>Order Status</li>
-                                <li>Delivery</li>
-                                <li>Returns</li>
-                                <li>Payment Options</li>
-                                <li>Contact Us On Nike.com Inquiries</li>
-                                <li>Contact Us On All Other Inquiries</li>
-                            </ul>
-                        </div>
-
-                        <div className="w-[240px]">
-                            <h3 className="text-[#ffffff] font-normal text-[14px]  mb-3">About Nike</h3>
-                            <ul className="text-[#7E7E7E] text-[14px] leading-[40px]">
-                                <li>News</li>
-                                <li>Careers</li>
-                                <li>Investors</li>
-                                <li>Sustainability</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className="social_icons flex gap-3 text-end">
-                        <FaTwitter className="bg-[#7E7E7E] w-[30px] h-[30px] p-2 rounded-full" />
-                        <FaFacebookF className="bg-[#7E7E7E] w-[30px] h-[30px] p-2 rounded-full" />
-                        <TfiYoutube className="bg-[#7E7E7E] w-[30px] h-[30px] p-2 rounded-full" />
-                        <TiSocialInstagram className="bg-[#7E7E7E] w-[30px] h-[30px] p-2 rounded-full" />
+                        {/* Social Media Icons */}
+                        <motion.div
+                            className="flex sm:justify-center lg:justify-start gap-3"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                        >
+                            {[FaTwitter, FaFacebookF, TfiYoutube, TiSocialInstagram].map((Icon, i) => (
+                                <motion.div
+                                    key={i}
+                                    whileHover={{ scale: 1.2, rotate: 5 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    className="w-10 h-10 flex items-center justify-center bg-[#7E7E7E] rounded-full cursor-pointer"
+                                >
+                                    <Icon className="text-white text-lg" />
+                                </motion.div>
+                            ))}
+                        </motion.div>
                     </div>
                 </div>
             </div>
-            <div className="subFooter header_container border-t-2 border-solid pt-3 border-[#757575] flex justify-between pb-[20px]">
-                <div className="locationText flex gap-5 w-[350px]">
-                    <div className="flex gap-2 w-[60px]">
-                        <FaLocationDot className="text-[#ffffff] w-[18px] h-[18px]" />
-                        <h3 className="text-[#ffffff] text-[15px] font-normal ">India</h3>
+
+            {/* Sub Footer Section */}
+            <motion.div
+                className="border-t border-[#757575] pt-4"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+            >
+                <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {/* Location Info */}
+                    <div className="flex items-center gap-2">
+                        <FaLocationDot className="text-white text-lg" />
+                        <span className="text-[#ffffff] text-sm">India</span>
+                        <p className="text-[#7E7E7E] text-sm sm:text-left">
+                            © 2023 Nike, Inc. All Rights Reserved
+                        </p>
                     </div>
-                    <p className="font-normal text-[15px] w-[250px] text-[#7E7E7E]">© 2023 Nike, Inc. All Rights Reserved</p>
+
+                    {/* Links */}
+                    <div className="mt-[-15px] sm:mt-[0px] flex justify-center sm:text-right  sm:justify-end space-x-4">
+                        {["Guides", "Terms of Sale", "Terms of Use", "Nike Privacy Policy"].map((text, index) => (
+                            <motion.span
+                                key={index}
+                                className="text-[#7E7E7E] text-sm cursor-pointer"
+                                whileHover={{ scale: 1.1, color: "#ffffff" }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                {text}
+                            </motion.span>
+                        ))}
+                    </div>
                 </div>
-                <div className="footerText flex gap-5 w-auto ">
-                    <p className="text-[#7E7E7E] text-[15px] font-normal">Guides</p>
-                    <p className="text-[#7E7E7E] text-[15px] font-normal">Terms of Sale</p>
-                    <p className="text-[#7E7E7E] text-[15px] font-normal">Terms of Use</p>
-                    <p className="text-[#7E7E7E] text-[15px] font-normal">Nike Privacy Policy</p>
-                </div>    
-            </div>
-            <div className="subFooter header_container flex justify-evenly mb-5">
-                    <Image src={payImg1} alt="payImg1" />
-                    <Image src={payImg2} alt="payImg2" />
-                    <Image src={payImg3} alt="payImg3" />
-                    <Image src={payImg4} alt="payImg4" />
-                    <Image src={payImg5} alt="payImg5" />
-                    <Image src={payImg6} alt="payImg6" />
-                    <Image src={payImg7} alt="payImg7" />
-                    <Image src={payImg8} alt="payImg8" />
-                    <Image src={payImg9} alt="payImg9" />
-                    <Image src={payImg10} alt="payImg10" />
-                    <Image src={payImg11} alt="payImg11" />
-                </div>
-        </footer>
-    )
+            </motion.div>
+        </motion.footer>
+    );
 }
+
+
+
+// import { FaTwitter } from "react-icons/fa";
+// import { FaFacebookF } from "react-icons/fa";
+// import { TiSocialInstagram } from "react-icons/ti";
+// import { TfiYoutube } from "react-icons/tfi";
+// import { FaLocationDot } from "react-icons/fa6";
+
+// export default function Footer() {
+//     return (
+//         <footer className="bg-[#111111] w-full pb-5">
+//             {/* Main Footer Section */}
+//             <div className="py-10">
+//                 <div className="container mx-auto px-4">
+//                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+//                         {/* Quick Links */}
+//                         <div>
+//                             <h3 className="text-white text-base font-semibold mb-4">Quick Links</h3>
+//                             <ul className="text-[#ffffff] text-sm space-y-2">
+//                                 <li>Find A Store</li>
+//                                 <li>Become A Member</li>
+//                                 <li>Sign Up for Email</li>
+//                                 <li>Send Us Feedback</li>
+//                                 <li>Student Discounts</li>
+//                             </ul>
+//                         </div>
+
+//                         {/* Get Help */}
+//                         <div>
+//                             <h3 className="text-white text-base font-semibold mb-4">Get Help</h3>
+//                             <ul className="text-[#7E7E7E] text-sm space-y-2">
+//                                 <li>Order Status</li>
+//                                 <li>Delivery</li>
+//                                 <li>Returns</li>
+//                                 <li>Payment Options</li>
+//                                 <li>Contact Us On Nike.com Inquiries</li>
+//                                 <li>Contact Us On All Other Inquiries</li>
+//                             </ul>
+//                         </div>
+
+//                         {/* About Nike */}
+//                         <div>
+//                             <h3 className="text-white text-base font-semibold mb-4">About Nike</h3>
+//                             <ul className="text-[#7E7E7E] text-sm space-y-2">
+//                                 <li>News</li>
+//                                 <li>Careers</li>
+//                                 <li>Investors</li>
+//                                 <li>Sustainability</li>
+//                             </ul>
+//                         </div>
+
+//                         {/* Social Media Icons */}
+//                         <div className="flex sm:justify-center lg:justify-start gap-3">
+//                             <div className="w-10 h-10 flex items-center justify-center bg-[#7E7E7E] rounded-full">
+//                                 <FaTwitter className="text-white text-lg" />
+//                             </div>
+//                             <div className="w-10 h-10 flex items-center justify-center bg-[#7E7E7E] rounded-full">
+//                                 <FaFacebookF className="text-white text-lg" />
+//                             </div>
+//                             <div className="w-10 h-10 flex items-center justify-center bg-[#7E7E7E] rounded-full">
+//                                 <TfiYoutube className="text-white text-lg" />
+//                             </div>
+//                             <div className="w-10 h-10 flex items-center justify-center bg-[#7E7E7E] rounded-full">
+//                                 <TiSocialInstagram className="text-white text-lg" />
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+
+//             {/* Sub Footer Section */}
+//             <div className="border-t border-[#757575] pt-4">
+//                 <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+//                     {/* Location Info */}
+//                     <div className="flex items-center gap-2">
+//                         <FaLocationDot className="text-white text-lg" />
+//                         <span className="text-[#ffffff] text-sm">India</span>
+//                         <p className=" text-left text-[#7E7E7E] text-sm sm:text-left">© 2023 Nike, Inc. All Rights Reserved</p>
+//                     </div>
+
+//                     {/* Copyright */}
+//                     <div className="hidden md:block text-left text-[#7E7E7E] text-sm sm:text-left">
+//                         {/* © 2023 Nike, Inc. All Rights Reserved */}
+//                     </div>
+
+//                     {/* Links */}
+//                     <div className="mt-[-15px] sm:mt-[0px] flex justify-center sm:justify-end space-x-4">
+//                         <span className="text-[#7E7E7E] text-[12px] sm:text-sm">Guides</span>
+//                         <span className="text-[#7E7E7E] text-[12px] sm:text-sm">Terms of Sale</span>
+//                         <span className="text-[#7E7E7E] text-[12px] sm:text-sm">Terms of Use</span>
+//                         <span className="text-[#7E7E7E] text-[12px] sm:text-sm">Nike Privacy Policy</span>
+//                     </div>
+//                 </div>
+//             </div>
+//         </footer>
+//     );
+// }
