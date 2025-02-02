@@ -24,7 +24,7 @@ export default function HeroSection() {
         animate="visible"
         variants={fadeInUp}
         transition={{ duration: 0.6 }}
-        className="heroSectionText bg-[#F5F5F5] max-w-6xl mx-auto w-full p-3"
+        className="heroSectionText bg-[#F5F5F5]  mx-auto w-full p-3"
       >
         <motion.h2 
           variants={fadeInUp}
