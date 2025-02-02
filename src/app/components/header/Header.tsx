@@ -211,7 +211,7 @@ export default function Header() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.8 }}
                   >
-                    <nav className="flex flex-col space-y-2 text-sm">
+                    <nav className="hidden md:flex flex-col space-y-2 text-sm">
                       <TopNavLinks />
                     </nav>
                   </motion.div>
