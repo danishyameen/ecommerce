@@ -79,13 +79,13 @@ export default function ProductCarousel() {
                 >
                     Gear Up
                 </motion.h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 ">
                     {Object.entries(products).map(([gender, items]) => (
                         <div key={gender} className="product-carousel-section">
                             <Carousel opts={{ align: "start" }}>
-                                <div className="flex justify-between items-center mb-4">
+                                <div className="flex justify-between items-center mb-4 ">
                                     <h3 className="text-lg md:text-xl font-medium">
-                                        Shop {gender.charAt(0).toUpperCase() + gender.slice(1)}'s
+                                    Shop {gender.charAt(0).toUpperCase() + gender.slice(1)}'s
                                     </h3>
                                     <div className="flex gap-2">
                                         <CarouselPrevious className="transition-transform hover:scale-110 bg-gray-200 hover:bg-gray-300 text-black rounded-full p-2">

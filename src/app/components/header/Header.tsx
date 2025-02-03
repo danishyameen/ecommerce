@@ -188,7 +188,7 @@ export default function Header() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7 }}
                   >
-                    <Link href="/wishlist" className="p-2">
+                    <Link href="/productsDetails" className="p-2">
                       <Image
                         src={heart}
                         alt="Wishlist"
